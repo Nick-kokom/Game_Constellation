@@ -236,3 +236,17 @@
   .hidden {
     display: none;
   }
+
+@media (max-width: 768px) {
+  #info-panel {
+    font-size: 0.9rem;
+  }
+
+  #game-screen {
+    padding: 5px;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}
