@@ -11,6 +11,7 @@ export class SceneManager {
     this.mouse = new THREE.Vector2();
     this.init();
     this.setupMouseEvents();
+    this.setupResizeListener(); // Add resize listener
   }
 
   init() {
@@ -41,21 +42,37 @@ export class SceneManager {
   }
 
   setupMouseEvents() {
-    this.renderer.domElement.addEventListener('click', (event) => {
-      const rect = this.renderer.domElement.getBoundingClientRect();
-      this.mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-      this.mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+    const domElement = this.renderer.domElement;
 
-      this.raycaster.setFromCamera(this.mouse, this.camera);
-      const intersects = this.raycaster.intersectObjects(this.scene.children);
+    // Support for both mouse and touch events
+    domElement.addEventListener('click', (event) => this.handleInteraction(event));
+    domElement.addEventListener('touchstart', (event) => this.handleInteraction(event.touches[0]));
+  }
 
-      if (intersects.length > 0) {
-        const object = intersects[0].object;
-        if (object.callback) {
-          object.callback();
-        }
+  handleInteraction(event) {
+    const rect = this.renderer.domElement.getBoundingClientRect();
+    this.mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    this.mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+    this.raycaster.setFromCamera(this.mouse, this.camera);
+    const intersects = this.raycaster.intersectObjects(this.scene.children);
+
+    if (intersects.length > 0) {
+      const object = intersects[0].object;
+      if (object.callback) {
+        object.callback();
       }
-    });
+    }
+  }
+
+  setupResizeListener() {
+    window.addEventListener('resize', () => this.onWindowResize());
+  }
+
+  onWindowResize() {
+    this.camera.aspect = window.innerWidth / window.innerHeight;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
   addStarfield() {
@@ -74,12 +91,6 @@ export class SceneManager {
     const material = new THREE.PointsMaterial({ color: 0xffffff, size: 0.1 });
     const stars = new THREE.Points(geometry, material);
     this.scene.add(stars);
-  }
-
-  onWindowResize() {
-    this.camera.aspect = window.innerWidth / window.innerHeight;
-    this.camera.updateProjectionMatrix();
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
   render() {
