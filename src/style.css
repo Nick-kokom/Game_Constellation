@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  #game-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+  }
+  
+  .screen.active {
+    display: flex;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 600px;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #357abd;
+    transform: scale(1.05);
+  }
+  
+  .input {
+    padding: 12px;
+    font-size: 1.1rem;* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Arial', sans-serif;
+        background: #000;
+        color: #fff;
+        overflow: hidden;
+      }
+      
+      #game-container {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+      }
+      
+      .screen {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 10;
+      }
+      
+      .screen.active {
+        display: flex;
+      }
+      
+      canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+      
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+      
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        max-width: 600px;
+      }
+      
+      .btn {
+        padding: 12px 24px;
+        font-size: 1.2rem;
+        background: #4a90e2;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 20;
+      }
+      
+      .btn:hover {
+        background: #357abd;
+        transform: scale(1.05);
+      }
+      
+      .input {
+        padding: 12px;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        width: 300px;
+        border: none;
+        border-radius: 5px;
+      }
+      
+      #info-panel {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.9);
+        padding: 2rem;
+        border-radius: 10px;
+        max-width: 500px;
+        width: 90%;
+        z-index: 20;
+      }
+      
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+      
+      .guidance {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      
+      #change-zodiac {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+      }
+      
+      .hidden {
+        display: none;
+      }
+    margin-bottom: 1rem;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  #info-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+  }
+  
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .guidance {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  #change-zodiac {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .hidden {
+    display: none;
+  }

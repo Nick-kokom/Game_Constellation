@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constellation Explorer</title>
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+  <body>
+    <div id="game-container">
+      <div id="welcome-screen" class="screen active">
+        <h1>Constellation Explorer</h1>
+        <p>Discover the mysteries of zodiac constellations in this interactive 3D experience.</p>
+        <button id="start-btn" class="btn">Begin Journey</button>
+      </div>
+
+      <div id="name-screen" class="screen">
+        <h2>Enter Your Details</h2>
+        <input type="text" id="player-name" placeholder="Your Name" class="input">
+        <select id="zodiac-select" class="input">
+          <option value="">Select Your Zodiac Sign</option>
+          <option value="aries">Aries</option>
+          <option value="taurus">Taurus</option>
+          <option value="gemini">Gemini</option>
+          <option value="cancer">Cancer</option>
+          <option value="leo">Leo</option>
+          <option value="virgo">Virgo</option>
+          <option value="libra">Libra</option>
+          <option value="scorpio">Scorpio</option>
+          <option value="sagittarius">Sagittarius</option>
+          <option value="capricorn">Capricorn</option>
+          <option value="aquarius">Aquarius</option>
+          <option value="pisces">Pisces</option>
+        </select>
+        <button id="generate-btn" class="btn">Generate Constellation</button>
+      </div>
+
+      <div id="game-screen" class="screen">
+        <div id="info-panel" class="hidden">
+          <h3 id="zodiac-name"></h3>
+          <p id="characteristics"></p>
+          <div class="info-grid">
+            <div>
+              <h4>Lucky Color</h4>
+              <p id="lucky-color"></p>
+            </div>
+            <div>
+              <h4>Lucky Number</h4>
+              <p id="lucky-number"></p>
+            </div>
+            <div>
+              <h4>Population</h4>
+              <p id="population"></p>
+            </div>
+          </div>
+          <div class="guidance">
+            <h4>Guidance</h4>
+            <p id="guidance"></p>
+          </div>
+          <button id="close-info" class="btn">Close</button>
+        </div>
+        <button id="change-zodiac" class="btn">Change Zodiac</button>
+      </div>
+    </div>
+    <script type="module" src="/src/script.js"></script>
+  </body>
+</html>
